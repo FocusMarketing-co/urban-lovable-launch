@@ -43,7 +43,7 @@ const LocationSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-12 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <GeometricPattern className="absolute top-8 left-8 opacity-10" size="lg" />
       

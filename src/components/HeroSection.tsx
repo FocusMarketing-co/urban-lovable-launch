@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
       </div>
 
       {/* Geometric Pattern Decorations */}
@@ -58,9 +58,9 @@ const HeroSection: React.FC = () => {
             variant="cta" 
             size="lg" 
             onClick={handleWhatsAppClick}
-            className="text-lg px-8 py-6 rounded-full min-w-[280px]"
+            className="text-2xl px-12 py-8 rounded-full min-w-[320px] animate-pulse-glow shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
-            <MessageCircle className="w-6 h-6 mr-3" />
+            <MessageCircle className="w-8 h-8 mr-3" />
             Agende sua visita no WhatsApp
           </Button>
           

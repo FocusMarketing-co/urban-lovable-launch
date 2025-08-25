@@ -48,14 +48,14 @@ const BenefitsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-subtle relative overflow-hidden">
+    <section className="py-12 bg-gradient-subtle relative overflow-hidden">
       {/* Background Decorations */}
       <GeometricPattern className="absolute top-12 right-12 opacity-20" size="lg" />
       <GeometricPattern className="absolute bottom-12 left-12 opacity-20" size="md" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6">
             Por que escolher o
             <br />
@@ -68,21 +68,29 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-2xl p-8 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border/50"
+              className="group bg-white rounded-xl p-6 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-2 border border-border/50"
             >
-              <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <benefit.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-4">
+              <h3 className="text-lg font-bold text-primary mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {benefit.description}
               </p>
+              <div className="mt-3 text-xs text-brand-pink font-semibold">
+                {index === 0 && "✓ Valorização garantida na região"}
+                {index === 1 && "✓ Vista panorâmica exclusiva"}
+                {index === 2 && "✓ Mais de 10 facilidades no térreo"}
+                {index === 3 && "✓ Equipamentos de última geração"}
+                {index === 4 && "✓ Eventos e networking premium"}
+                {index === 5 && "✓ 3 linhas de metrô próximas"}
+              </div>
             </div>
           ))}
         </div>

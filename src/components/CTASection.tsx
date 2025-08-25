@@ -58,51 +58,91 @@ const CTASection: React.FC = () => {
           </div>
 
           {/* Urgency Message */}
-          <div className="bg-brand-pink/20 border border-brand-pink/30 rounded-2xl p-8 mb-12 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-4">🔥 Apenas 175 unidades disponíveis</h3>
-            <p className="text-lg opacity-90 mb-6">
-              Empreendimento exclusivo com unidades limitadas. Não perca esta oportunidade única 
+          <div className="bg-red-500/20 border-2 border-red-400/50 rounded-2xl p-8 mb-12 backdrop-blur-sm animate-pulse-glow">
+            <h3 className="text-3xl font-bold mb-4 text-red-100">🔥 APENAS 175 UNIDADES DISPONÍVEIS</h3>
+            <p className="text-xl opacity-95 mb-6 font-medium">
+              Empreendimento EXCLUSIVO com unidades limitadas. Não perca esta oportunidade ÚNICA 
               de morar no coração de São Paulo com todo o conforto e praticidade.
             </p>
             
-            <div className="flex items-center justify-center gap-4 text-sm">
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                <span>12 pessoas visualizando agora</span>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-base mb-4">
+              <div className="flex items-center bg-green-500/20 rounded-full px-4 py-2">
+                <div className="w-4 h-4 bg-green-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="font-semibold">17 pessoas visualizando AGORA</span>
               </div>
-              <div className="w-1 h-4 bg-white/30"></div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-yellow-400 rounded-full mr-2 animate-pulse"></div>
-                <span>3 unidades reservadas hoje</span>
+              <div className="flex items-center bg-yellow-500/20 rounded-full px-4 py-2">
+                <div className="w-4 h-4 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="font-semibold">8 unidades reservadas HOJE</span>
+              </div>
+              <div className="flex items-center bg-red-500/20 rounded-full px-4 py-2">
+                <div className="w-4 h-4 bg-red-400 rounded-full mr-3 animate-pulse"></div>
+                <span className="font-semibold">Últimas 23 unidades restantes</span>
               </div>
             </div>
           </div>
 
           {/* Main CTA */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold mb-6">
-              Não deixe para depois. Agende sua visita agora!
+          <div className="space-y-8">
+            <h3 className="text-4xl font-bold mb-6">
+              Não deixe para depois. Agende sua visita AGORA!
             </h3>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                variant="cta" 
-                size="lg" 
-                onClick={handleWhatsAppClick}
-                className="text-xl px-12 py-8 rounded-full min-w-[320px] bg-green-500 hover:bg-green-600 animate-pulse-glow"
-              >
-                <MessageCircle className="w-6 h-6 mr-3" />
-                Falar no WhatsApp agora
-              </Button>
+            <div className="flex flex-col lg:flex-row gap-8 justify-center items-center max-w-6xl mx-auto">
+              {/* WhatsApp CTA */}
+              <div className="flex-1 text-center">
+                <Button 
+                  variant="cta" 
+                  size="lg" 
+                  onClick={handleWhatsAppClick}
+                  className="text-2xl px-16 py-10 rounded-full w-full max-w-[400px] bg-green-500 hover:bg-green-600 animate-pulse-glow shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <MessageCircle className="w-8 h-8 mr-3" />
+                  Falar no WhatsApp AGORA
+                </Button>
+                <p className="text-sm opacity-80 mt-2">Resposta imediata • Sem compromisso</p>
+              </div>
               
+              {/* OR Divider */}
+              <div className="text-2xl font-bold opacity-60">OU</div>
+              
+              {/* Lead Form */}
+              <div className="flex-1 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-[400px] w-full">
+                <h4 className="text-xl font-bold mb-4 text-center">Receba informações por WhatsApp</h4>
+                <div className="space-y-3">
+                  <input 
+                    type="text" 
+                    placeholder="Seu nome" 
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-brand-pink"
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="(11) 99999-9999" 
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-800 placeholder-gray-500 border-0 focus:ring-2 focus:ring-brand-pink"
+                  />
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="w-full text-lg py-3 rounded-lg border-white/30 text-white hover:bg-white/10 bg-white/5"
+                  >
+                    Enviar informações
+                  </Button>
+                </div>
+                <p className="text-xs opacity-70 mt-3 text-center">
+                  Seus dados estão seguros • Não fazemos spam
+                </p>
+              </div>
+            </div>
+            
+            {/* Phone CTA */}
+            <div className="text-center">
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={handlePhoneClick}
-                className="text-xl px-12 py-8 rounded-full border-white/30 text-white hover:bg-white/10 min-w-[320px]"
+                className="text-lg px-8 py-4 rounded-full border-white/30 text-white hover:bg-white/10 bg-white/5"
               >
-                <Phone className="w-6 h-6 mr-3" />
-                Ligar agora: (11) 9999-9999
+                <Phone className="w-5 h-5 mr-2" />
+                Ou ligue: (11) 9999-9999
               </Button>
             </div>
           </div>
